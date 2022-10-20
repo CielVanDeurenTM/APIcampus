@@ -146,6 +146,16 @@ router.get('/docent', async (req,res) => {
     console.log(e);
     res.sendStatus(500);
   }
-})
+});
+
+router.get('/docent/:id', async (req, res) => {
+  console.log('/docent/:id route called');
+  try {
+    res.send(await Docent.findById(req.params.id));
+  } catch(e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
 
 module.exports = router;
