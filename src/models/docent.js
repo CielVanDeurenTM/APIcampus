@@ -6,7 +6,7 @@ const DocentSchema = new mongoose.Schema({
     acheternaam: {type: String},
     campussen: {type: mongoose.Schema.Types.ObjectId, ref: campus}
   }, {
-    collection: 'campus'  
+    collection: 'docent'  
 });
 
 module.exports = mongoose.model('Docent', DocentSchema);
