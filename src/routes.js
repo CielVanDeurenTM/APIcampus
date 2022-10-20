@@ -158,4 +158,14 @@ router.get('/docent/:id', async (req, res) => {
   }
 });
 
+router.delete('/docent/delete/:id', async (req, res) => {
+  console.log('/docent/delete/:id route called');
+  try {
+    res.send(await Docent.findByIdAndDelete(req.params.id));
+  } catch(e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
 module.exports = router;
