@@ -3,7 +3,7 @@ const campus = require('./campus');
 
 const DocentSchema = new mongoose.Schema({
     voornaam: {type: String},
-    acheternaam: {type: String},
+    achternaam: {type: String},
     campussen: {type: mongoose.Schema.Types.ObjectId, ref: campus}
   }, {
     collection: 'docent'  
