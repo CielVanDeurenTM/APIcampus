@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Campus = require('./models/campus');
+const Docent = require('./models/docent');
 
 /********************************/
 /*           Routes             */
@@ -135,5 +136,16 @@ router.get('/campus', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+router.get('/docent', async (req,res) => {
+  console.log('/docent route called');
+  try{
+    res.json(await Docent.find());
+  }
+  catch(e){
+    console.log(e);
+    res.sendStatus(500);
+  }
+})
 
 module.exports = router;
